@@ -3,7 +3,9 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
 import '../../../core/constants/constant_imports.dart';
+import '../../../core/helper/helper_imports.dart';
 import '../widgets/custom_login_button.dart';
+import 'second_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({this.username = 'Home Screen', Key? key}) : super(key: key);
@@ -77,8 +79,12 @@ class _HomeScreenState extends State<HomeScreen> {
         borderColor: ColorConstants.blue,
         bgColor: ColorConstants.blue,
         lblStyle: AppTextStyles.semiBoldText(fontSize: Dimensions.px16),
-        //onTap: _onTapLoginBtn,
+        onTap: _onTapSecondScreenBtn,
       ),
     );
+  }
+
+  void _onTapSecondScreenBtn() {
+    AppRoute.nextPage(context, SecondScreen());
   }
 }
